@@ -13,9 +13,9 @@ namespace TFAngular23ASPMVC.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(int? id, string? value)
+        public IActionResult Index()
         {
-            Console.WriteLine(id + value);
+            ViewBag.rantanplan = "PommeDePin";
             return View();
         }
 

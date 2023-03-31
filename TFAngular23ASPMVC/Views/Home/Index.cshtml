@@ -1,8 +1,53 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ma HomePage";
+
+    List<string> names = new List<string>()
+    {
+    "Pierre",
+    "Paul",
+    "Jacques"
+    };
+
+    string username = "Patrick";
+
+    bool isGentil(string name)
+    {
+        return name == "Bob";
+    }
+
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p>@ViewBag.rantanplan</p>
+
+    @if (isGentil(username))
+    {
+        <p>Oh le gentil @(username)</p>
+    }
+    else
+    {
+        <p>Vilain pas bo @(username)</p>
+    }
+
+    @*@for (int i = 0; i < 10; i++)
+    {
+        <p>@i</p>
+    }*@
+
+    <ul>
+        @foreach (var name in names)
+        {
+            <li>
+                <p>@name</p>
+            </li>
+        }
+    </ul>
+
+    
+
+    
+
+    <p></p>
 </div>

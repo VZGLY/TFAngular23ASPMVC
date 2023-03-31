@@ -1,4 +1,6 @@
-﻿
+﻿@model User;
+
+
     <a asp-controller="User" asp-action="Index">
     <button class="btn btn-primary">
             Retour
@@ -6,3 +8,19 @@
     </a>
 
 <h1>Read</h1>
+
+<p>@Model.Firstname</p>
+
+<p>@Model.Email</p>
+
+@if (Model.FavoriteMovie is not null)
+{
+    <h1>
+        Movies
+    </h1>
+
+    @foreach (string movie in Model.FavoriteMovie)
+    {
+        <p>@movie</p>
+    }
+}

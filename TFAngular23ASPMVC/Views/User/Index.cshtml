@@ -1,11 +1,9 @@
-﻿
+﻿@model List<User>;
+
+
 <h1>Index</h1>
 
-    <a asp-controller ="User" asp-action="Read">
-        <button class="btn btn-primary">
-            Read
-        </button>
-    </a>
+    
 <a asp-controller="User" asp-action="Create">
     <button class="btn btn-primary">
         Create
@@ -21,5 +19,16 @@
         Delete
     </button>
 </a>
+
+@foreach (User user in @Model)
+{
+    <p>@user.ID</p>
+    <p>@user.Email</p>
+    <a asp-controller="User" asp-action="Read" asp-route-id="@user.ID">
+        <button class="btn btn-primary">
+            Read
+        </button>
+    </a>
+}
 
 
